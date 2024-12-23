@@ -1,7 +1,5 @@
 package com.ddd.controller;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import com.ddd.common.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -62,15 +60,15 @@ public class GetCodeController {
         request.getSession().setAttribute("code", sRand);
         request.getSession().setMaxInactiveInterval(120);
 
-        // 释放画笔
-        g.dispose();
-        // 输出图象到页面
-        JPEGImageEncoder encoder;
-        try {
-            encoder = JPEGCodec.createJPEGEncoder(response.getOutputStream());
-            encoder.encode(image);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        // 释放画笔
+//        g.dispose();
+//        // 输出图象到页面
+//        JPEGImageEncoder encoder;
+//        try {
+//            encoder = JPEGCodec.createJPEGEncoder(response.getOutputStream());
+//            encoder.encode(image);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
